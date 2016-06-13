@@ -1,0 +1,60 @@
+body{
+	font-family: "微软雅黑" sans-serif;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right: 0;
+	margin:auto;
+}
+.nav-left{
+	position: absolute;
+	width: 448px;
+	padding: 0 15px;
+	height: 100%;
+	top:0;
+	bottom:0;
+	margin:auto;
+	overflow: auto;
+
+	.header{
+		position: relative;
+	}
+	.row{
+		margin-bottom:0;
+	}
+	.add{
+		position: absolute;
+		top:0;
+		bottom:0;
+		right:12px;
+		margin:auto;
+	}
+	.collection-item .circle{
+		width: 20px;
+		height: 20px;
+		margin-right:12px;
+	}
+}
+.content{
+	position: absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:448px;
+	margin:auto;
+	.circle{
+		width: 15px;
+		height: 15px;
+		margin-right:20px;
+	}
+	.row{
+		margin:0;
+	}
+	h5{
+		color: #999;
+	}
+	h6{
+		color:black;
+	}
+}

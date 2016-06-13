@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoList">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="http://cdn.bootcss.com/materialize/0.97.6/css/materialize.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/index.css">
+	<script src="./js/angular.js"></script>
+	<script src="./js/angular-animate.js"></script>
+	<script src="./js/index.js"></script>
+</head>
+<!-- <nav ng-click="toggle=!toggle" ng-class="{green:toggle}" ng-controller="navCtrl" ng-init="toggle=false">
+	<ul>
+		<li ng-repeat="v in list">
+			<span>{{v}}</span>
+		</li>
+	</ul>
+</nav>
+<footer ng-controller="footerCtrl">
+	<p ></p>
+</footer> -->
+<body ng-controller="mainCtrl">
+	<div class="grey darken-4 nav-left">
+		<div class="left-inner">
+			<ul class="collection">
+				<li class="collection-item header">
+					<div class="row valign-wrappe">
+						<h5 class="left valign ">提醒事件</h5>
+						<a  href="" ng-click="addQingdanItem()" class="valign btn red right add">+</a>
+					</div>
+				</li>
+				<li
+				ng-class="{'purple accent-2':v===currentQingdan}"
+				ng-click="setCurrent($index);"
+				ng-repeat="v in qingdan"
+				class="collection-item">
+				<div class="row valign-wrapper">
+					<div ng-class="v.theme" class="circle left"></div>
+					<span class="title left valign"><input ng-blur="saveData()" type="text" ng-model="v.name" value="v.name"></span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="green grey lighten-3 content">
+	<div class="content-inner">
+		<div class="container {{currentQingdan.theme}}-text">
+			<div ng-show="currentQingdan" class="section">
+				<h4><input type="text" ng-model="currentQingdan.name" value="currentQingdan.name"></h4>
+				<div class="divider"></div>
+			</div>
+
+			<h5 ng-show="currentQingdan">已完成</h5>
+			<div class="divider"></div>
+
+			<div ng-show="v.state" class="section" ng-repeat="v in currentQingdan.shixiang">
+				<div class="row valign-wrapper">
+					<div
+					ng-click="v.state=!v.state"
+					class="circle left valign {{currentQingdan.theme}}"></div>
+					<h6 class="left valign"><input type="text" ng-model="v.name" value="v.name"></h6>
+				</div>
+			</div>
+
+			<h5 ng-show="currentQingdan">未完成</h5>
+			<div class="divider"></div>
+
+			<div ng-show="!v.state" class="section" ng-repeat="v in currentQingdan.shixiang">
+				<div class="row valign-wrapper">
+					<div
+					ng-click="v.state=!v.state"
+					class="circle left valign {{currentQingdan.theme}}"></div>
+					<h6 class="left valign"><input type="text" ng-model="v.name" value="v.name"></h6>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
